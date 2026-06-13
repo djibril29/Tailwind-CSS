@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ===== Custom theme (Tailwind v4 CSS-first config) ===== */
+@theme {
+  /* Montserrat as the default sans font */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand palette: orange + blue */
+  --color-brand-orange: #f36b1c;
+  --color-brand-orange-dark: #d9560b;
+  --color-brand-blue: #11315e;
+  --color-brand-blue-light: #1e4e8c;
+
+  /* Custom animations */
+  --animate-fade-up: fade-up 0.7s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+/* ===== Base tweaks ===== */
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+}
